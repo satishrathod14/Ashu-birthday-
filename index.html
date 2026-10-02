@@ -2,197 +2,304 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>For Ashu ❤️</title>
-
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
+*{box-sizing:border-box;margin:0;padding:0}
 body{
-    min-height:100vh;
-    overflow-x:hidden;
-    background:#090014;
-    color:white;
-    font-family:Arial,sans-serif;
-    text-align:center;
+min-height:100vh;
+overflow:hidden;
+font-family:Arial,sans-serif;
+color:white;
+text-align:center;
+background:radial-gradient(circle at top,#681957,#1b0c30 50%,#06040d);
 }
-
-.screen{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:25px;
-    animation:fade .9s ease;
+.page{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
 }
-
-.box{
-    width:100%;
-    max-width:520px;
-}
-
-.hidden{
-    display:none!important;
-}
-
-h1{
-    font-size:42px;
-    margin-bottom:20px;
-    text-shadow:0 0 25px #ff4fa3;
-}
-
-h2{
-    font-size:30px;
-    margin-bottom:20px;
-}
-
-p{
-    font-size:18px;
-    line-height:1.7;
-}
-
-button{
-    margin-top:30px;
-    padding:15px 30px;
-    border:0;
-    border-radius:40px;
-    font-size:17px;
-    font-weight:bold;
-    color:#c21867;
-    background:white;
-    box-shadow:0 0 25px #ff75b7;
-    cursor:pointer;
-}
-
-button:active{
-    transform:scale(.93);
-}
-
-/* Opening */
-
-.opening{
-    background:
-    radial-gradient(circle at 50% 30%,#ff318a55,transparent 35%),
-    linear-gradient(135deg,#090014,#30002f,#12001f);
-}
-
-.heart{
-    font-size:90px;
-    animation:heartbeat 1.2s infinite;
-}
-
-/* Typing */
-
-.typing{
-    min-height:80px;
-    font-size:22px;
-    color:#ffc4e1;
-}
-
-/* Gift */
-
-.gift{
-    font-size:125px;
-    margin:35px 0;
-    cursor:pointer;
-    animation:bounce 1.5s infinite;
-}
-
-/* Cake */
-
-.cake{
-    font-size:120px;
-    animation:float 2s infinite;
-}
-
-/* Glass card */
-
 .card{
-    padding:30px 22px;
-    border-radius:28px;
-    background:rgba(255,255,255,.09);
-    border:1px solid rgba(255,255,255,.18);
-    box-shadow:0 0 40px rgba(255,50,150,.25);
-    backdrop-filter:blur(15px);
+width:100%;
+max-width:420px;
+padding:30px 22px;
+border-radius:28px;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.16);
+box-shadow:0 20px 60px rgba(0,0,0,.5);
+backdrop-filter:blur(12px);
 }
-
-/* Photo gallery */
-
-.photos{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-    margin-top:20px;
+.heart{
+font-size:75px;
+animation:pulse 1.3s infinite;
+margin-bottom:18px;
 }
-
-.photos img{
-    width:100%;
-    height:170px;
-    object-fit:cover;
-    border-radius:18px;
-    border:2px solid #ffffff33;
-    box-shadow:0 0 15px #ff4f9a55;
+@keyframes pulse{
+0%,100%{transform:scale(1)}
+50%{transform:scale(1.18)}
 }
-
-/* Secret */
-
-.secret{
-    font-size:80px;
-    cursor:pointer;
-    animation:heartbeat 1.4s infinite;
+h1{
+font-size:30px;
+margin-bottom:12px;
 }
-
-/* Floating hearts */
-
-.floatHeart{
-    position:fixed;
-    bottom:-50px;
-    pointer-events:none;
-    animation:rise linear forwards;
+.subtitle{
+font-size:17px;
+opacity:.85;
+line-height:1.6;
+margin-bottom:25px;
 }
-
-/* Confetti */
-
+button{
+border:0;
+border-radius:50px;
+padding:15px 25px;
+font-size:16px;
+font-weight:bold;
+color:white;
+background:linear-gradient(135deg,#ff4f9a,#a83cff);
+box-shadow:0 8px 25px rgba(255,70,160,.35);
+cursor:pointer;
+}
+button:active{transform:scale(.94)}
+#surprise{display:none}
+.message{
+min-height:190px;
+font-size:18px;
+line-height:1.8;
+margin:20px 0;
+}
+.final{
+display:none;
+animation:appear 1s ease;
+}
+@keyframes appear{
+from{opacity:0;transform:translateY(20px)}
+to{opacity:1;transform:translateY(0)}
+}
+.cake{
+font-size:70px;
+margin:10px;
+animation:float 2s ease-in-out infinite;
+}
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+}
+.heartFloat{
+position:fixed;
+bottom:-30px;
+pointer-events:none;
+animation:rise linear forwards;
+z-index:5;
+}
+@keyframes rise{
+from{transform:translateY(0) rotate(0);opacity:1}
+to{transform:translateY(-110vh) rotate(360deg);opacity:0}
+}
 .confetti{
-    position:fixed;
-    top:-30px;
-    pointer-events:none;
-    animation:confettiFall linear forwards;
+position:fixed;
+width:8px;
+height:14px;
+top:-20px;
+z-index:10;
+animation:fall 3s linear forwards;
+}
+@keyframes fall{
+to{transform:translateY(110vh) rotate(720deg)}
+}
+.small{
+font-size:13px;
+opacity:.6;
+margin-top:20px;
+}
+</style>
+</head>
+<body>
+    <div class="page">
+
+<div class="card" id="opening">
+
+<div class="heart">❤️</div>
+
+<h1>Hey Ashu...</h1>
+
+<p class="subtitle">
+Someone has prepared a little surprise<br>
+especially for you ✨
+</p>
+
+<button onclick="openSurprise()">
+Open Your Surprise 🎁
+</button>
+
+<p class="small">Tap the button... 👀</p>
+
+</div>
+
+<div class="card" id="surprise">
+
+<div class="heart">💖</div>
+
+<h1>Happy Birthday, Ashu! 🎂</h1>
+
+<div class="message" id="message"></div>
+
+<div class="final" id="final">
+
+<div class="cake">🎂</div>
+
+<p style="font-size:20px;line-height:1.6;">
+May your new year be filled with
+<b>happiness, crazy memories, success</b>
+and lots of reasons to smile. ✨
+</p>
+
+<br>
+
+<button onclick="makeWish()">
+Make a Wish ✨
+</button>
+
+<p id="wish" style="margin-top:20px;font-size:18px;"></p>
+
+</div>
+</div>
+    </div>
+    <script>
+
+const birthdayMessage =
+"Happy Birthday to one of the most special people in my life! 💖\n\n" +
+"Ashu, I hope today brings you the biggest smile and creates memories you'll never forget. " +
+"Thank you for all the laughs, conversations, crazy moments and memories. 😄\n\n" +
+"Never stop being the amazing person you are. " +
+"Keep smiling, keep dreaming and keep shining! ✨\n\n" +
+"Happy Birthday, bestie! 🎂❤️";
+
+function openSurprise(){
+
+document.getElementById("opening").style.display="none";
+
+document.getElementById("surprise").style.display="block";
+
+createHearts();
+
+createConfetti();
+
+typeMessage();
+
 }
 
-/* Stars */
+function typeMessage(){
 
-.star{
-    position:fixed;
-    pointer-events:none;
-    animation:starFall linear forwards;
+const box=document.getElementById("message");
+
+let index=0;
+
+function type(){
+
+if(index < birthdayMessage.length){
+
+if(birthdayMessage[index]=="\n"){
+box.innerHTML+="<br>";
+}else{
+box.innerHTML+=birthdayMessage[index];
 }
 
-/* Animations */
+index++;
 
-@keyframes fade{
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+setTimeout(type,35);
+
+}else{
+
+setTimeout(function(){
+document.getElementById("final").style.display="block";
+},500);
+
 }
 
-@keyframes heartbeat{
-    0%,100%{
-        transform:scale(1);
-    }
-    50%{
-        transform:scale(1.25);
-    }
 }
 
-@keyframes bounce{
-    0%,100%{
+type();
+
+}
+
+function createHearts(){
+
+setInterval(function(){
+
+const heart=document.createElement("div");
+
+heart.className="heartFloat";
+
+const hearts=[
+"❤️","💖","💕","💗","💓","✨"
+];
+
+heart.innerHTML=
+hearts[Math.floor(Math.random()*hearts.length)];
+
+heart.style.left=Math.random()*100+"%";
+
+heart.style.fontSize=
+(15+Math.random()*25)+"px";
+
+heart.style.animationDuration=
+(4+Math.random()*5)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(function(){
+heart.remove();
+},9000);
+
+},450);
+
+}
+
+function createConfetti(){
+
+for(let i=0;i<80;i++){
+
+const piece=document.createElement("div");
+
+piece.className="confetti";
+
+piece.style.left=
+Math.random()*100+"%";
+
+piece.style.background=
+"hsl("+
+Math.random()*360+
+",90%,65%)";
+
+piece.style.animationDelay=
+Math.random()*2+"s";
+
+document.body.appendChild(piece);
+
+setTimeout(function(){
+piece.remove();
+},5000);
+
+}
+
+}
+
+function makeWish(){
+
+document.getElementById("wish").innerHTML=
+"✨ Wish unlocked! ✨<br>" +
+"Now close your eyes and make your birthday wish. 💫❤️";
+
+createConfetti();
+
+}
+
+</script>
+
+</body>
+</html>
+
+
+    
